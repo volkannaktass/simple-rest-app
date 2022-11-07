@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app1',
-    'rest_framework'
+    'rest_framework',
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
@@ -129,4 +130,21 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
     'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+    'rest_framework.authentication.TokenAuthentication',
+    ]
 }
+
+# TOKEN AUTH
+
+#'DEFAULT_AUTHENTICATION_CLASSES': [
+#'rest_framework.authentication.TokenAuthentication',
+#]
+
+
+# from rest_framework.authtoken.models import Token
+# from django.contrib.auth.models import User
+# for user in User.objects.all():
+#     Token.objects.get_or_create(user=user)
+# print(token.key)
+# curl -X GET http://127.0.0.1:8000/api/example/ -H 'Authorization: Token 9944b09199c62bcf9418ad846dd0e4bbdfc6ee4b'
