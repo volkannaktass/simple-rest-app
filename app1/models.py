@@ -20,3 +20,6 @@ class Yazar(models.Model):
     class Meta:
         verbose_name = 'Yazar'
         verbose_name_plural = 'Yazarlar'
+
+
+
